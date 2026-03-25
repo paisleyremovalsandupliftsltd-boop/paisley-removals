@@ -122,6 +122,40 @@ input, select, textarea {
 
 /* FOOTER */
 footer {background:#1f2937;color:white;text-align:center;padding:20px;margin-top:30px;}
+select {
+  width:100%;
+  padding:14px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-size:16px;
+  background:white;
+
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+
+.select-wrapper {
+  position:relative;
+}
+
+.select-wrapper::after {
+  content:"▼";
+  position:absolute;
+  right:15px;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  font-size:12px;
+  color:#666;
+}
+
+label {
+  font-weight:600;
+  margin-top:10px;
+  display:block;
+}
 </style>
 </head>
 
@@ -199,7 +233,19 @@ footer {background:#1f2937;color:white;text-align:center;padding:20px;margin-top
     <option>Uplift Services</option>
     <option>Packing Services</option>
     <option>Furniture Assembly</option>
-
+<label>Property Size</label>
+<div class="select-wrapper">
+  <select name="property">
+    <option value="">-- Select property size --</option>
+    <option>1 Bedroom</option>
+    <option>2 Bedroom</option>
+    <option>3 Bedroom</option>
+    <option>4 Bedroom</option>
+    <option>5+ Bedroom</option>
+    <option>Flat / Apartment</option>
+    <option>Office / Commercial</option>
+  </select>
+</div>
   </select>
 </div>
 
