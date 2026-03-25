@@ -6,7 +6,9 @@
 
 <title>Paisley Removals & Uplift Ltd</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Professional removals and uplift services across Scotland. Fully insured, reliable and affordable.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -18,11 +20,7 @@ body {
 
 h1,h2,h3 {font-family:'Poppins',sans-serif;}
 
-.container {
-  padding:40px 20px;
-  max-width:1100px;
-  margin:auto;
-}
+.container {padding:50px 20px;max-width:1100px;margin:auto;}
 
 /* HEADER */
 .main-header {
@@ -33,18 +31,32 @@ h1,h2,h3 {font-family:'Poppins',sans-serif;}
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px;
+  padding:15px 20px;
 }
 
-.logo p {
-  font-size:12px;
-  font-weight:bold;
-  margin:0;
+.menu-icon {font-size:26px;cursor:pointer;}
+
+.nav {
+  position:fixed;
+  top:0;
+  left:-250px;
+  width:250px;
+  height:100%;
+  background:#1f2937;
+  transition:0.3s;
+  padding-top:60px;
+}
+
+.nav a {
+  display:block;
+  padding:15px;
+  color:white;
+  text-decoration:none;
 }
 
 /* HERO */
 .hero {
-  padding:90px 20px;
+  padding:100px 20px;
   text-align:center;
   background:linear-gradient(135deg,#f97316,#fb923c);
   color:white;
@@ -56,16 +68,13 @@ h1,h2,h3 {font-family:'Poppins',sans-serif;}
   padding:14px 24px;
   border-radius:8px;
   text-decoration:none;
-  display:inline-block;
-  margin-top:10px;
 }
 
-/* SERVICES (FIXED) */
+/* SERVICES */
 .services-grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
-  margin-top:20px;
 }
 
 .service-card {
@@ -73,42 +82,15 @@ h1,h2,h3 {font-family:'Poppins',sans-serif;}
   padding:25px;
   border-radius:16px;
   box-shadow:0 8px 25px rgba(0,0,0,0.06);
-  transition:0.3s;
   border-left:5px solid #f97316;
 }
 
-.service-card:hover {
-  transform:translateY(-6px);
-  box-shadow:0 15px 35px rgba(0,0,0,0.12);
-}
-
-.service-card .icon {
-  font-size:28px;
-  margin-bottom:10px;
-}
-
-.service-card h3 {
-  margin:10px 0 5px;
-}
-
-.service-card p {
-  font-size:14px;
-  color:#666;
-}
-
 /* PRICING */
-.pricing-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
 .price-card {
   background:white;
   padding:20px;
   border-radius:14px;
   text-align:center;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
   border-top:4px solid #f97316;
 }
 
@@ -117,7 +99,6 @@ h1,h2,h3 {font-family:'Poppins',sans-serif;}
   background:white;
   padding:25px;
   border-radius:14px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
 input, select, textarea {
@@ -133,192 +114,124 @@ input, select, textarea {
   background:white;
   padding:20px;
   border-radius:14px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
-/* FLOAT BUTTONS */
-.call-btn {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#f97316;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-}
+/* FLOAT */
+.call-btn {position:fixed;bottom:20px;right:20px;background:#f97316;color:white;padding:15px;border-radius:50%;}
+.whatsapp-btn {position:fixed;bottom:80px;right:20px;background:#25D366;padding:15px;border-radius:50%;}
 
-.whatsapp-btn {
-  position:fixed;
-  bottom:80px;
-  right:20px;
-  background:#25D366;
-  padding:15px;
-  border-radius:50%;
-}
-
-footer {
-  background:#1f2937;
-  color:white;
-  text-align:center;
-  padding:20px;
-  margin-top:30px;
-}
- select {
-  appearance:none;
-  background:white;
-  border:1px solid #ddd;
-  padding:14px;
-  border-radius:8px;
-  font-size:14px;
-}
-
-label {
-  font-weight:600;
-  margin-top:10px;
-  display:block;
-} 
+/* FOOTER */
+footer {background:#1f2937;color:white;text-align:center;padding:20px;margin-top:30px;}
 </style>
 </head>
 
 <body>
 
+<!-- MENU -->
+<div id="nav" class="nav">
+<a href="#services">Services</a>
+<a href="#contact">Get Quote</a>
+</div>
+
 <header class="main-header">
-  <div class="logo">
-    <h1>Paisley Removals & Uplift Ltd</h1>
-    <p>SERVING RENFREWSHIRE & SURROUNDING AREAS</p>
-  </div>
+<h1>Paisley Removals & Uplift Ltd</h1>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
 </header>
 
 <section class="hero">
-  <h2>Professional Removals & Uplift Services Across Scotland</h2>
-  <p>Fast, reliable & affordable</p>
-  <a href="tel:07449218821" class="btn">📞 Call Now</a>
+<h2>Professional Removals & Uplift Services Across Scotland</h2>
+<p>✔ Fully Insured | ✔ Same Day Service | ✔ 5 Star Rated</p>
+<a href="tel:07449218821" class="btn">Call Now</a>
 </section>
-<p>✔ Fully Insured & Reliable | ✔ Same Day Service | ✔ 5 Star Rated</p>
+
 <div class="container">
 
-<h2>Our Services</h2>
+<h2 id="services">Our Services</h2>
 <div class="services-grid">
-
-  <div class="service-card">
-    <div class="icon">🚚</div>
-    <h3>House Removals</h3>
-    <p>Reliable full house moving service across Scotland.</p>
-  </div>
-
-  <div class="service-card">
-    <div class="icon">🏢</div>
-    <h3>Office Moves</h3>
-    <p>Professional office relocations with minimal downtime.</p>
-  </div>
-
-  <div class="service-card">
-    <div class="icon">🚐</div>
-    <h3>Man & Van</h3>
-    <p>Perfect for small moves and quick jobs.</p>
-  </div>
-
-  <div class="service-card">
-    <div class="icon">🧹</div>
-    <h3>House Clearance</h3>
-    <p>Fast and hassle-free clearance service.</p>
-  </div>
-
+<div class="service-card">🚚 House Removals</div>
+<div class="service-card">🚐 Man & Van</div>
+<div class="service-card">🧹 House Clearance</div>
 </div>
 
 <h2>Our Prices</h2>
-<div class="pricing-grid">
-  <div class="price-card">🚐 From £50/hour</div>
-  <div class="price-card">🏠 1 Bed £150</div>
-  <div class="price-card">🏠 2 Bed £220</div>
-  <div class="price-card">🏠 3 Bed £320+</div>
-  <div class="price-card">🧹 Clearance £180</div>
-</div>
-<h2>Customer Reviews</h2>
-
 <div class="services-grid">
-  <div class="service-card">⭐️⭐️⭐️⭐️⭐️<br>“Brilliant service, fast and reliable.”</div>
-  <div class="service-card">⭐️⭐️⭐️⭐️⭐️<br>“Very professional, highly recommend.”</div>
+<div class="price-card">From £50/hour</div>
+<div class="price-card">1 Bed £150</div>
+<div class="price-card">2 Bed £220</div>
+<div class="price-card">3 Bed £320+</div>
+<div class="price-card">Clearance £180</div>
 </div>
+
+<h2>Customer Reviews</h2>
+<div class="services-grid">
+<div class="service-card">⭐️⭐️⭐️⭐️⭐️ Great service!</div>
+<div class="service-card">⭐️⭐️⭐️⭐️⭐️ Highly recommend</div>
+</div>
+
 <h2>Service Area</h2>
 <div class="card">
 <iframe src="https://www.google.com/maps?q=Renfrewshire+Scotland&output=embed" width="100%" height="300"></iframe>
 </div>
 
-<h2>Check If We Cover Your Area</h2>
+<h2>Check Area</h2>
 <div class="card">
-<input id="postcode" placeholder="Enter postcode">
+<input id="postcode">
 <button class="btn" onclick="checkArea()">Check</button>
 <p id="result"></p>
 </div>
 
-<h2>Get Quote</h2>
-<div class="form-box fade">
-
+<h2 id="contact">Get Quote</h2>
+<div class="form-box">
 <form action="https://formsubmit.co/paisleyremovalsandupliftltd@gmail.com" method="POST">
 
-<label>Full Name</label>
-<input name="name" placeholder="Your Name" required>
+<input name="name" placeholder="Name" required>
+<input name="email" placeholder="Email" required>
 
-<label>Email Address</label>
-<input name="email" placeholder="Your Email" required>
-
-<label>Phone Number</label>
-<input name="phone" placeholder="Phone Number">
-
-<label>Select Service</label>
-<select name="service" required>
-  <option value="">-- Choose a service --</option>
-  <option>House Removals</option>
-  <option>Office Moves</option>
-  <option>Man & Van</option>
-  <option>House Clearance</option>
-  <option>Uplift Services</option>
-  <option>Packing Services</option>
-  <option>Furniture Assembly</option>
+<select name="service">
+<option>Select Service</option>
+<option>House Removals</option>
+<option>Man & Van</option>
+<option>House Clearance</option>
 </select>
 
-<label>Property Size</label>
 <select name="property">
-  <option value="">-- Select property size --</option>
-  <option>1 Bedroom</option>
-  <option>2 Bedroom</option>
-  <option>3 Bedroom</option>
-  <option>4+ Bedroom</option>
+<option>Property Size</option>
+<option>1 Bed</option>
+<option>2 Bed</option>
+<option>3 Bed</option>
 </select>
 
-<label>Pickup Postcode</label>
-<input name="pickup" placeholder="e.g. PA1 2AB">
+<textarea name="message"></textarea>
 
-<label>Drop-off Postcode</label>
-<input name="dropoff" placeholder="e.g. G1 2FF">
-
-<label>Moving Date</label>
-<input type="date" name="date">
-
-<label>Extra Details</label>
-<textarea name="message" placeholder="Items, stairs, access etc."></textarea>
-
-<button class="btn">Get Quote</button>
+<button class="btn">Submit</button>
 
 </form>
 </div>
 
 </div>
 
-<footer>© 2026 Paisley Removals & Uplift Ltd</footer>
+<footer>
+© 2026 Paisley Removals & Uplift Ltd | Renfrewshire, Scotland
+</footer>
 
 <a href="tel:07449218821" class="call-btn">📞</a>
-<a href="https://wa.me/447449218821" class="whatsapp-btn">💬</a>
+<a href="https://wa.me/447449218821?text=Hi%20I%20need%20a%20quote" class="whatsapp-btn">
+<img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" style="width:22px;">
+</a>
 
 <script>
+function toggleMenu(){
+ let nav=document.getElementById("nav");
+ nav.style.left = nav.style.left==="0px" ? "-250px" : "0px";
+}
+
 function checkArea(){
  let input=document.getElementById("postcode").value.toLowerCase();
  let result=document.getElementById("result");
  if(input.startsWith("pa")||input.startsWith("g")){
-  result.innerHTML="✅ We cover your area";
+  result.innerHTML="We cover your area";
  } else {
-  result.innerHTML="Contact us to confirm";
+  result.innerHTML="Contact to confirm";
  }
 }
 </script>
