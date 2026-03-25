@@ -8,14 +8,24 @@
 
 <meta name="description" content="Professional removals and uplift services across Scotland. Fully insured, reliable and affordable.">
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {margin:0;font-family:Arial;background:#fff;color:#222;}
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f9fafb;
+  color:#1f2937;
+}
+
+h1,h2,h3 {font-family:'Poppins',sans-serif;}
 
 /* HEADER */
 .main-header {
-  position:sticky;top:0;background:#ff6a00;color:white;
+  position:sticky;top:0;z-index:1000;
+  background:#1f2937;color:white;
   display:flex;justify-content:space-between;align-items:center;
-  padding:15px;z-index:1000;
+  padding:15px;
 }
 
 .logo h1 {margin:0;font-size:18px;}
@@ -26,50 +36,72 @@ body {margin:0;font-family:Arial;background:#fff;color:#222;}
 /* SIDE MENU */
 .side-menu {
   position:fixed;top:0;left:-260px;width:260px;height:100%;
-  background:#ff6a00;padding-top:60px;transition:0.3s;z-index:999;
+  background:#1f2937;padding-top:60px;transition:0.3s;
 }
 
 .side-menu a {
   display:block;padding:15px;color:white;text-decoration:none;
-  border-bottom:1px solid rgba(255,255,255,0.2);
+  border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 .menu-btn {
-  background:white;color:#ff6a00 !important;
+  background:#f97316;color:white!important;
   margin:10px;border-radius:6px;text-align:center;
 }
 
 /* HERO */
 .hero {
-  padding:80px 20px;text-align:center;
-  background:linear-gradient(#ff6a00,#ff8c42);color:white;
+  padding:90px 20px;text-align:center;
+  background:linear-gradient(135deg,#f97316,#fb923c);
+  color:white;
 }
 
 .btn {
-  background:white;padding:12px 20px;color:#ff6a00;
-  text-decoration:none;display:inline-block;margin-top:10px;border-radius:6px;
+  background:#1f2937;color:white;padding:14px 24px;
+  border-radius:8px;text-decoration:none;display:inline-block;
+  transition:0.3s;
 }
+.btn:hover {background:#f97316;transform:scale(1.05);}
 
 /* BADGE */
 .badge {
-  background:#fff;color:#ff6a00;padding:8px 12px;
-  border-radius:6px;margin-top:10px;display:inline-block;font-weight:bold;
+  background:white;color:#f97316;
+  padding:8px 12px;border-radius:6px;margin-top:10px;
+  display:inline-block;font-weight:bold;
 }
 
-/* GRID */
-.container {padding:20px;max-width:1100px;margin:auto;}
-.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;}
-.card {background:#f5f5f5;padding:15px;border-radius:8px;}
+/* LAYOUT */
+.container {padding:40px 20px;max-width:1100px;margin:auto;}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card {
+  background:white;padding:20px;border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
 
 /* FORM */
-input, select, textarea {
-  width:100%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ddd;
+input,select,textarea {
+  width:100%;padding:12px;margin:6px 0;
+  border-radius:6px;border:1px solid #ddd;
 }
+
+/* MAP */
+iframe {margin-top:10px;border-radius:10px;}
 
 /* FLOAT BUTTONS */
 .call-btn {
   position:fixed;bottom:20px;right:20px;
-  background:#ff6a00;color:white;padding:15px;border-radius:50%;
+  background:#f97316;color:white;padding:15px;border-radius:50%;
 }
 .whatsapp-btn {
   position:fixed;bottom:80px;right:20px;
@@ -79,17 +111,20 @@ input, select, textarea {
 /* POPUP */
 .popup {
   position:fixed;bottom:20px;left:20px;
-  background:#ff6a00;color:white;padding:15px;border-radius:10px;
+  background:#f97316;color:white;padding:15px;border-radius:10px;
   display:none;
 }
 
-footer {background:#222;color:white;text-align:center;padding:20px;margin-top:30px;}
+footer {
+  background:#1f2937;color:white;text-align:center;
+  padding:20px;margin-top:30px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- SIDE MENU -->
+<!-- MENU -->
 <div id="menu" class="side-menu">
   <a href="#services">🚚 Services</a>
   <a href="#contact">📞 Contact</a>
@@ -133,34 +168,33 @@ footer {background:#222;color:white;text-align:center;padding:20px;margin-top:30
   <div class="card">🧹 House Clearance from £180</div>
 </div>
 
-<h2>Customer Reviews</h2>
-<div class="card">⭐️⭐️⭐️⭐️⭐️ - Brilliant service!</div>
+<h2>Service Area</h2>
+<div class="card">
+  <p>📍 Covering Renfrewshire & across Scotland</p>
+  <iframe src="https://www.google.com/maps?q=Renfrewshire+Scotland&output=embed" width="100%" height="300"></iframe>
+</div>
+
+<h2>Check If We Cover Your Area</h2>
+<div class="card">
+  <input id="postcode" placeholder="Enter your postcode">
+  <button class="btn" onclick="checkArea()">Check Area</button>
+  <p id="result"></p>
+</div>
 
 <h2 id="contact">Get a Free Quote</h2>
-
 <form action="https://formsubmit.co/paisleyremovalsandupliftltd@gmail.com" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<input type="tel" name="phone" placeholder="Phone Number">
-
+<input name="name" placeholder="Your Name" required>
+<input name="email" placeholder="Your Email" required>
+<input name="phone" placeholder="Phone Number">
 <select name="service">
 <option>Select Service</option>
 <option>House Removals</option>
 <option>Man & Van</option>
 <option>House Clearance</option>
 </select>
-
-<input type="text" placeholder="Pickup Postcode">
-<input type="text" placeholder="Drop-off Postcode">
-
-<textarea placeholder="Extra details"></textarea>
-
+<textarea name="message" placeholder="Details"></textarea>
 <button class="btn">Get Quote</button>
 </form>
-
-<p style="text-align:center;margin-top:20px;">
-Over 100+ successful moves completed across Scotland
-</p>
 
 </div>
 
@@ -168,19 +202,28 @@ Over 100+ successful moves completed across Scotland
   <p>© 2026 Paisley Removals & Uplift Ltd</p>
 </footer>
 
-<!-- FLOAT BUTTONS -->
 <a href="tel:07449218821" class="call-btn">📞</a>
-<a href="https://wa.me/447449218821?text=Hi%20I%20need%20a%20quote" class="whatsapp-btn">💬</a>
+<a href="https://wa.me/447449218821" class="whatsapp-btn">💬</a>
 
-<!-- POPUP -->
-<div id="popup" class="popup">
-⚡ Limited slots this week – book now!
-</div>
+<div id="popup" class="popup">⚡ Limited availability this week – book now!</div>
 
 <script>
 function toggleMenu(){
   let menu=document.getElementById("menu");
   menu.style.left = (menu.style.left==="0px") ? "-260px" : "0px";
+}
+
+function checkArea(){
+  let input=document.getElementById("postcode").value.toLowerCase();
+  let result=document.getElementById("result");
+  let areas=["pa","g","fk","ml","ka","eh"];
+  if(areas.some(a=>input.startsWith(a))){
+    result.innerHTML="✅ We cover your area!";
+    result.style.color="green";
+  } else {
+    result.innerHTML="⚠️ Contact us to confirm coverage";
+    result.style.color="orange";
+  }
 }
 
 setTimeout(()=>{
