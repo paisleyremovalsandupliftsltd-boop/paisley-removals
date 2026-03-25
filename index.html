@@ -158,7 +158,7 @@ textarea {
 </div>
 
 <header class="main-header">
-  <h2>Paisley Removals</h2>
+  <h2>Paisley Removals & Uplift Ltd</h2>
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
 </header>
 
@@ -183,7 +183,40 @@ textarea {
 <div class="card">
 <iframe src="https://www.google.com/maps?q=Renfrewshire+Scotland&output=embed" width="100%" height="250"></iframe>
 </div>
+<script>
+function checkPostcode(){
+  let input = document.getElementById("postcode").value.toUpperCase().trim();
+  let result = document.getElementById("result");
 
+  if(
+    input.startsWith("G") ||        // Glasgow
+    input.startsWith("EH") ||       // Edinburgh
+    input.startsWith("KA") ||       // Ayrshire
+    input.startsWith("PA1") ||
+    input.startsWith("PA2") ||
+    input.startsWith("PA3") ||
+    input.startsWith("PA4") ||
+    input.startsWith("PA5") ||
+    input.startsWith("PA6") ||
+    input.startsWith("PA7") ||
+    input.startsWith("PA8") ||
+    input.startsWith("PA9") ||
+    input.startsWith("PA10") ||
+    input.startsWith("PA11") ||
+    input.startsWith("PA12") ||
+    input.startsWith("PA13") ||
+    input.startsWith("PA14") ||
+    input.startsWith("PA15") ||
+    input.startsWith("PA16")
+  ){
+    result.innerHTML = "✅ Great news! We cover your area.";
+    result.style.color = "green";
+  } else {
+    result.innerHTML = "⚠️ We may still cover your area — please contact us to confirm.";
+    result.style.color = "orange";
+  }
+}
+</script>
 <h2 id="contact">Get a Quote</h2>
 <h2>Customer Reviews</h2>
 
