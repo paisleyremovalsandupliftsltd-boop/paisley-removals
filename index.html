@@ -163,6 +163,20 @@ footer {
   padding:20px;
   margin-top:30px;
 }
+ select {
+  appearance:none;
+  background:white;
+  border:1px solid #ddd;
+  padding:14px;
+  border-radius:8px;
+  font-size:14px;
+}
+
+label {
+  font-weight:600;
+  margin-top:10px;
+  display:block;
+} 
 </style>
 </head>
 
@@ -234,12 +248,54 @@ footer {
 </div>
 
 <h2>Get Quote</h2>
-<div class="form-box">
-<form>
-<input placeholder="Name">
-<input placeholder="Email">
-<textarea placeholder="Details"></textarea>
-<button class="btn">Submit</button>
+<div class="form-box fade">
+
+<form action="https://formsubmit.co/paisleyremovalsandupliftltd@gmail.com" method="POST">
+
+<label>Full Name</label>
+<input name="name" placeholder="Your Name" required>
+
+<label>Email Address</label>
+<input name="email" placeholder="Your Email" required>
+
+<label>Phone Number</label>
+<input name="phone" placeholder="Phone Number">
+
+<label>Select Service</label>
+<select name="service" required>
+  <option value="">-- Choose a service --</option>
+  <option>House Removals</option>
+  <option>Office Moves</option>
+  <option>Man & Van</option>
+  <option>House Clearance</option>
+  <option>Uplift Services</option>
+  <option>Packing Services</option>
+  <option>Furniture Assembly</option>
+</select>
+
+<label>Property Size</label>
+<select name="property">
+  <option value="">-- Select property size --</option>
+  <option>1 Bedroom</option>
+  <option>2 Bedroom</option>
+  <option>3 Bedroom</option>
+  <option>4+ Bedroom</option>
+</select>
+
+<label>Pickup Postcode</label>
+<input name="pickup" placeholder="e.g. PA1 2AB">
+
+<label>Drop-off Postcode</label>
+<input name="dropoff" placeholder="e.g. G1 2FF">
+
+<label>Moving Date</label>
+<input type="date" name="date">
+
+<label>Extra Details</label>
+<textarea name="message" placeholder="Items, stairs, access etc."></textarea>
+
+<button class="btn">Get Quote</button>
+
 </form>
 </div>
 
