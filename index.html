@@ -230,19 +230,98 @@ label {
   border:1px solid #ddd;
   min-height:100px;
 }
+/* OVERLAY */
+#overlay {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:none;
+  z-index:9998;
+}
+
+/* MENU */
+.nav {
+  position:fixed;
+  top:0;
+  left:-100%;
+  width:85%;
+  height:100%;
+  background:#0f172a;
+  transition:0.4s ease;
+  padding-top:20px;
+  z-index:9999;
+}
+
+/* HEADER */
+.menu-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  color:white;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.menu-header span {
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* LINKS */
+.nav a {
+  display:block;
+  padding:18px 20px;
+  color:white;
+  text-decoration:none;
+  font-size:17px;
+  transition:0.2s;
+}
+
+.nav a:hover {
+  background:#f97316;
+}
+
+/* SUBMENU */
+.submenu {
+  display:none;
+  background:#020617;
+}
+
+.submenu a {
+  padding-left:40px;
+  font-size:15px;
+}
+
+/* QUOTE BUTTON */
+.quote-btn {
+  background:#f97316;
+  margin:10px 20px;
+  border-radius:8px;
+  text-align:center;
+  font-weight:bold;
+}
+  
 </style>
 </head>
 
 <body>
   <!-- update 123 -->
 <!-- MOBILE MENU -->
+<div id="overlay" onclick="toggleMenu()"></div>
+
 <div id="nav" class="nav">
 
-  <a href="#" onclick="toggleMenu()">❌ Close</a>
+  <div class="menu-header">
+    <h2>Paisley Removals</h2>
+    <span onclick="toggleMenu()">✕</span>
+  </div>
 
   <a href="index.html">🏠 Home</a>
 
-  <a href="#" onclick="toggleServices()">🚚 Services ▼</a>
+  <a href="#" onclick="toggleServices()">🚚 Services ▾</a>
 
   <div id="servicesMenu" class="submenu">
     <a href="services.html">House Removals</a>
@@ -254,7 +333,8 @@ label {
 
   <a href="index.html#prices">💰 Prices</a>
   <a href="index.html#area">📍 Service Area</a>
-  <a href="index.html#contact">📝 Get Quote</a>
+
+  <a href="index.html#contact" class="quote-btn">Get Quote</a>
 
   <a href="tel:07449218821">📞 Call Now</a>
   <a href="https://wa.me/447449218821">💬 WhatsApp</a>
@@ -267,11 +347,7 @@ label {
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
 </header>
 <!-- MENU -->
-<div id="nav" class="nav">
-<a href="#services">Services</a>
-<a href="#contact">Get Quote</a>
-</div>
-
+<a href="#" onclick="toggleMenu()">❌ Close</a>
 
 <section class="hero">
   <h2>Stress-Free Removals Across Scotland</h2>
@@ -402,6 +478,31 @@ function checkArea(){
   result.innerHTML="Contact to confirm";
  }
 }
+<script>
+function toggleMenu(){
+  const nav = document.getElementById("nav");
+  const overlay = document.getElementById("overlay");
+
+  if(nav.style.left === "0%"){
+    nav.style.left = "-100%";
+    overlay.style.display = "none";
+  } else {
+    nav.style.left = "0%";
+    overlay.style.display = "block";
+  }
+}
+
+function toggleServices(){
+  const menu = document.getElementById("servicesMenu");
+
+  if(menu.style.display === "block"){
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+</script>
+  
 </script>
 <script>
 const elements = document.querySelectorAll('.service-card');
