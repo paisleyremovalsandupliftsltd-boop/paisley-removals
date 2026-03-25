@@ -156,6 +156,13 @@ label {
   margin-top:10px;
   display:block;
 }
+  textarea {
+  width:100%;
+  padding:14px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  min-height:100px;
+}
 </style>
 </head>
 
@@ -215,52 +222,68 @@ label {
 <p id="result"></p>
 </div>
 
-<h2 id="contact">Get Quote</h2>
+<h2 id="contact">Get Your Free Quote</h2>
+
 <div class="form-box">
 <form action="https://formsubmit.co/paisleyremovalsandupliftltd@gmail.com" method="POST">
 
-<input name="name" placeholder="Name" required>
-<input name="email" placeholder="Email" required>
+<h3>Contact Details</h3>
+
+<input name="name" placeholder="Full Name" required>
+<input name="email" placeholder="Email Address" required>
+<input name="phone" placeholder="Phone Number">
+
+<h3>Move Details</h3>
 
 <label>Select Service</label>
 <div class="select-wrapper">
-  <select name="service" required>
-    <option value="">-- Select a service --</option>
-
-    <option>House Removals</option>
-    <option>Office Moves</option>
-    <option>Man & Van</option>
-    <option>House Clearance</option>
-    <option>Uplift Services</option>
-    <option>Packing Services</option>
-    <option>Furniture Assembly</option>
-  </select>
+<select name="service" required>
+<option value="">-- Select a service --</option>
+<option>House Removals</option>
+<option>Office Moves</option>
+<option>Man & Van</option>
+<option>House Clearance</option>
+<option>Uplift Services</option>
+<option>Packing Services</option>
+<option>Furniture Assembly</option>
+</select>
 </div>
-  <label>Property Type & Size</label>
+
+<label>Property Type & Size</label>
 <div class="select-wrapper">
-  <select name="property" required>
-    <option value="">-- Select property --</option>
-    <option>Studio / Bedsit</option>
-    <option>1 Bedroom</option>
-    <option>2 Bedroom</option>
-    <option>3 Bedroom</option>
-    <option>4 Bedroom</option>
-    <option>5 Bedroom</option>
-    <option>6+ Bedroom</option>
-    <option>Flat / Apartment</option>
-    <option>House</option>
-    <option>Bungalow</option>
-    <option>Office / Commercial</option>
-  </select>
+<select name="property" required>
+<option value="">-- Select property --</option>
+<option>Studio / Bedsit</option>
+<option>1 Bedroom</option>
+<option>2 Bedroom</option>
+<option>3 Bedroom</option>
+<option>4 Bedroom</option>
+<option>5 Bedroom</option>
+<option>6+ Bedroom</option>
+<option>Flat / Apartment</option>
+<option>House</option>
+<option>Bungalow</option>
+<option>Office / Commercial</option>
+</select>
 </div>
 
-<textarea name="message"></textarea>
+<label>Pickup Postcode</label>
+<input name="pickup" placeholder="e.g. PA1 2AB" required>
 
-<button class="btn">Submit</button>
+<label>Drop-off Postcode</label>
+<input name="dropoff" placeholder="e.g. G1 2FF" required>
+
+<label>Moving Date</label>
+<input type="date" name="date">
+
+<h3>Additional Information</h3>
+
+<textarea name="message" placeholder="Items, stairs, access, timing etc."></textarea>
+
+<button class="btn">Get My Quote</button>
 
 </form>
 </div>
-
 </div>
 
 <footer>
