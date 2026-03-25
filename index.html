@@ -75,6 +75,16 @@ nav a {
   text-decoration:none;
 }
 
+/* WHATSAPP */
+.whatsapp-btn {
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:#25D366;
+  padding:15px;
+  border-radius:50%;
+}
+
 /* CONTAINER */
 .container {
   padding:20px;
@@ -103,12 +113,8 @@ nav a {
   margin-top:30px;
 }
 
-.trust div {
-  margin:10px 0;
-}
-
 /* FORM */
-input, textarea {
+input, select, textarea {
   width:100%;
   padding:12px;
   margin:6px 0;
@@ -122,18 +128,6 @@ footer {
   padding:20px;
   margin-top:30px;
   color:white;
-}
-/* WHATSAPP BUTTON */
-.whatsapp-btn {
-  position:fixed;
-  bottom:80px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  font-size:20px;
-  text-decoration:none;
 }
 </style>
 
@@ -189,13 +183,40 @@ footer {
 <div class="card">⭐️⭐️⭐️⭐️⭐️ - "Brilliant service, very reliable!"</div>
 <div class="card">⭐️⭐️⭐️⭐️⭐️ - "Fast and professional, highly recommend."</div>
 
-<h2 id="contact">Get a Quote</h2>
+<h2 id="contact">Get a Free Quote</h2>
 
 <form action="https://formsubmit.co/paisleyremovalsandupliftltd@gmail.com" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your enquiry..." required></textarea>
-  <button type="submit" class="btn">Send Enquiry</button>
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<select name="service" required>
+  <option value="">Select a service</option>
+  <option>House Removals</option>
+  <option>Office Moves</option>
+  <option>Uplift Services</option>
+  <option>Packing Services</option>
+  <option>Furniture Assembly</option>
+</select>
+
+<select name="property_size">
+  <option value="">Property Size</option>
+  <option>1 Bedroom</option>
+  <option>2 Bedroom</option>
+  <option>3 Bedroom</option>
+  <option>4+ Bedroom</option>
+</select>
+
+<input type="text" name="pickup" placeholder="Pickup Postcode">
+<input type="text" name="dropoff" placeholder="Drop-off Postcode">
+
+<input type="date" name="move_date">
+
+<textarea name="message" placeholder="Extra details (items, stairs etc.)"></textarea>
+
+<button type="submit" class="btn">Get Quote</button>
+
 </form>
 
 </div>
@@ -205,7 +226,12 @@ footer {
   <p>Follow us: Facebook | Instagram | TikTok</p>
 </footer>
 
+<!-- FLOATING BUTTONS -->
 <a href="tel:07449218821" class="call-btn">📞</a>
-<a href="https://wa.me/447449218821" class="whatsapp-btn"><img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" style="width:24px;"></a>
+
+<a href="https://wa.me/447449218821" class="whatsapp-btn">
+  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" style="width:24px;">
+</a>
+
 </body>
 </html>
