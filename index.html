@@ -187,19 +187,21 @@ footer {background:#1f2937;color:white;text-align:center;padding:20px;margin-top
 <input name="name" placeholder="Name" required>
 <input name="email" placeholder="Email" required>
 
-<select name="service">
-<option>Select Service</option>
-<option>House Removals</option>
-<option>Man & Van</option>
-<option>House Clearance</option>
-</select>
+<label>Select Service</label>
+<div class="select-wrapper">
+  <select name="service" required>
+    <option value="">-- Select a service --</option>
 
-<select name="property">
-<option>Property Size</option>
-<option>1 Bed</option>
-<option>2 Bed</option>
-<option>3 Bed</option>
-</select>
+    <option>House Removals</option>
+    <option>Office Moves</option>
+    <option>Man & Van</option>
+    <option>House Clearance</option>
+    <option>Uplift Services</option>
+    <option>Packing Services</option>
+    <option>Furniture Assembly</option>
+
+  </select>
+</div>
 
 <textarea name="message"></textarea>
 
