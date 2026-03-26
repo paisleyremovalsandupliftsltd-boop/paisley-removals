@@ -539,50 +539,61 @@ h1, h2, h3 {
     <strong>— David L</strong>
   </div>
 
-  <!-- CONTACT FORM -->
-  <h2 id="contact" class="section-title">Get a Quote</h2>
-  <div class="card">
-    <form class="quote-form" action="https://formsubmit.co/paisleyremovalsandupliftltd@gmail.com" method="POST">
-      <input name="name" placeholder="Full Name" required>
-      <input name="email" type="email" placeholder="Email" required>
-      <input name="phone" type="tel" placeholder="Phone">
+ <!-- CONTACT FORM -->
+<h2 id="contact" class="section-title">Get a Quote</h2>
+<div class="card">
 
-      <select name="service" required>
-        <option value="">Select Service</option>
-        <option>House Removals</option>
-        <option>Man & Van</option>
-        <option>House Clearance</option>
-        <option>Packing Services</option>
-        <option>Furniture Assembly</option>
-      </select>
+  <form class="quote-form" name="quote" method="POST" data-netlify="true">
 
-      <select name="property">
-        <option value="">Property Size</option>
-        <option>1 Bedroom</option>
-        <option>2 Bedroom</option>
-        <option>3 Bedroom</option>
-      </select>
+    <!-- REQUIRED FOR NETLIFY -->
+    <input type="hidden" name="form-name" value="quote">
 
-      <input name="pickup" placeholder="Pickup Postcode">
-      <input name="dropoff" placeholder="Drop-off Postcode">
+    <input name="name" placeholder="Full Name" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="phone" type="tel" placeholder="Phone">
 
-      <label style="display:block; color:#475569; margin-top:8px; font-size:0.9rem;">Preferred Moving Date</label>
-      <input name="date" type="date" required>
+    <select name="service" required>
+      <option value="">Select Service</option>
+      <option>House Removals</option>
+      <option>Man & Van</option>
+      <option>House Clearance</option>
+      <option>Packing Services</option>
+      <option>Furniture Assembly</option>
+    </select>
 
-      <label style="display:block; color:#475569; margin-top:8px; font-size:0.9rem;">Preferred Time</label>
-      <select name="time">
-        <option value="">Select Time</option>
-        <option>Morning (8am - 12pm)</option>
-        <option>Afternoon (12pm - 4pm)</option>
-        <option>Evening (4pm - 7pm)</option>
-        <option>Flexible</option>
-      </select>
+    <select name="property">
+      <option value="">Property Size</option>
+      <option>1 Bedroom</option>
+      <option>2 Bedroom</option>
+      <option>3 Bedroom</option>
+    </select>
 
-      <textarea name="message" placeholder="Additional details"></textarea>
+    <input name="pickup" placeholder="Pickup Postcode">
+    <input name="dropoff" placeholder="Drop-off Postcode">
 
-      <button type="submit" class="btn">Submit Quote Request</button>
-    </form>
-  </div>
+    <label style="display:block; color:#475569; margin-top:8px; font-size:0.9rem;">
+      Preferred Moving Date
+    </label>
+    <input name="date" type="date" required>
+
+    <label style="display:block; color:#475569; margin-top:8px; font-size:0.9rem;">
+      Preferred Time
+    </label>
+    <select name="time">
+      <option value="">Select Time</option>
+      <option>Morning (8am - 12pm)</option>
+      <option>Afternoon (12pm - 4pm)</option>
+      <option>Evening (4pm - 7pm)</option>
+      <option>Flexible</option>
+    </select>
+
+    <textarea name="message" placeholder="Additional details"></textarea>
+
+    <button type="submit" class="btn">Submit Quote Request</button>
+
+  </form>
+<input type="hidden" name="redirect" value="/thank-you.html">
+</div>
 
 </div>
 
