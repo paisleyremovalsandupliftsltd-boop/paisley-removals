@@ -541,18 +541,18 @@ h1, h2, h3 {
 
  <!-- CONTACT FORM -->
 <h2 id="contact" class="section-title">Get a Quote</h2>
-<div class="card">
 
-  <form class="quote-form" name="quote" method="POST" data-netlify="true">
-<form class="quote-form" name="quote" method="POST" data-netlify="true" action="/thank-you.html">
+<form class="quote-form" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
 
   <input type="hidden" name="form-name" value="quote">
+
+  <!-- THIS IS THE IMPORTANT PART -->
+  <input type="hidden" name="redirect" value="https://paisleyremovalsanduplift.co.uk/thank-you.html">
 
   <input name="name" placeholder="Full Name" required>
   <input name="email" type="email" placeholder="Email" required>
   <input name="phone" type="tel" placeholder="Phone">
-    <input type="hidden" name="form-name" value="quote">
-<input type="hidden" name="redirect" value="/thank-you.html">
+
     
     <!-- REQUIRED FOR NETLIFY -->
     <input type="hidden" name="form-name" value="quote">
