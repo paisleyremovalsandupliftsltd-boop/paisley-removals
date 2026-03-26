@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prices - Paisley Removals & Uplift Ltd</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+/* BASE */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #14b8a6;
+}
+
+/* HEADER */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #0b3c5d;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.menu-icon {
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* MENU OVERLAY */
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background: #0b3c5d;
+  transition: 0.3s ease;
+  z-index: 9999;
+  padding-top: 20px;
+  overflow-y: auto;
+}
+
+.nav a {
+  display: block;
+  padding: 18px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav a:hover {
+  background: #14b8a6;
+}
+
+/* HERO */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0b3c5d, #1e3a5f);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* CONTAINER */
+.container {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin: 30px 0 15px;
+  color: #0b3c5d;
+}
+
+/* PRICE TABLE */
+.price-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 25px;
+}
+
+.price-table thead th {
+  background: #0b3c5d;
+  color: white;
+  padding: 14px 20px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+}
+
+.price-table tbody td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.price-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.price-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.price-table .price {
+  font-weight: 700;
+  color: #14b8a6;
+  font-size: 1.1rem;
+}
+
+/* PRICE GRID */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.price-card {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s;
+}
+
+.price-card:hover {
+  transform: translateY(-4px);
+}
+
+.price-card .price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin: 8px 0 4px;
+}
+
+.price-card .label {
+  font-size: 1.05rem;
+  color: #0b3c5d;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.price-card .note {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* INFO CARD */
+.info-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.info-card h3 {
+  margin-top: 0;
+  color: #0b3c5d;
+}
+
+.info-card ul {
+  padding-left: 20px;
+  color: #475569;
+}
+
+.info-card ul li {
+  margin-bottom: 6px;
+}
+
+/* BTN */
+.btn {
+  background: #14b8a6;
+  padding: 14px 28px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #0d9488;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0b3c5d, #1e3a5f);
+  color: white;
+}
+
+.cta h2 {
+  margin-top: 0;
+}
+
+/* FLOAT BUTTONS */
+.float-btn {
+  position: fixed;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 50;
+  transition: transform 0.2s;
+}
+
+.float-btn:hover {
+  transform: scale(1.1);
+}
+
+.call-btn {
+  bottom: 20px;
+  background: #14b8a6;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.whatsapp-btn {
+  bottom: 86px;
+  background: #25D366;
+}
+
+/* FOOTER */
+.footer {
+  background: #0b3c5d;
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #14b8a6;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .hero p { font-size: 1.2rem; }
+  .main-header h2 { font-size: 1.3rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU OVERLAY -->
+<div id="overlay" onclick="toggleMenu()"></div>
+
+<!-- SIDE NAV -->
+<div id="nav" class="nav">
+  <a href="#" onclick="toggleMenu()">Close &#10005;</a>
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About Us</a>
+  <a href="services.html">Services</a>
+  <a href="prices.html">Prices</a>
+  <a href="index.html#contact">Get Quote</a>
+  <a href="tel:07449218821">Call Now</a>
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+  <h2>Paisley Removals & Uplift Ltd</h2>
+  <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Our Prices</h1>
+  <p>Transparent, competitive pricing with no hidden fees. All prices include a fully insured service.</p>
+</section>
+
+<div class="container">
+
+  <!-- REMOVAL PRICES -->
+  <h2 class="section-title">House Removals</h2>
+  <div class="price-grid">
+    <div class="price-card">
+      <div class="label">1 Bed Move</div>
+      <div class="price">&pound;150</div>
+      <div class="note">Flats & small homes</div>
+    </div>
+    <div class="price-card">
+      <div class="label">2 Bed Move</div>
+      <div class="price">&pound;220</div>
+      <div class="note">Standard houses</div>
+    </div>
+    <div class="price-card">
+      <div class="label">3 Bed Move</div>
+      <div class="price">&pound;320+</div>
+      <div class="note">Larger properties</div>
+    </div>
+    <div class="price-card">
+      <div class="label">4+ Bed Move</div>
+      <div class="price">Quote</div>
+      <div class="note">Contact us for a price</div>
+    </div>
+  </div>
+
+  <!-- OTHER SERVICES -->
+  <h2 class="section-title">Other Services</h2>
+  <table class="price-table">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Starting From</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Man & Van</td>
+        <td class="price">&pound;50</td>
+      </tr>
+      <tr>
+        <td>House Clearance</td>
+        <td class="price">&pound;180</td>
+      </tr>
+      <tr>
+        <td>Packing Service</td>
+        <td class="price">&pound;80</td>
+      </tr>
+      <tr>
+        <td>Furniture Assembly</td>
+        <td class="price">&pound;40</td>
+      </tr>
+      <tr>
+        <td>Single Item Collection</td>
+        <td class="price">&pound;30</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- WHAT'S INCLUDED -->
+  <h2 class="section-title">What's Included</h2>
+  <div class="info-card">
+    <h3>Every booking includes:</h3>
+    <ul>
+      <li>Fully insured service</li>
+      <li>Professional, experienced team</li>
+      <li>Careful handling of all belongings</li>
+      <li>Free blankets and straps for protection</li>
+      <li>No hidden charges or surprise fees</li>
+      <li>Flexible scheduling, including weekends</li>
+    </ul>
+  </div>
+
+  <!-- EXTRA INFO -->
+  <div class="info-card">
+    <h3>Good to know</h3>
+    <ul>
+      <li>Prices are based on moves within the Renfrewshire and Greater Glasgow area</li>
+      <li>Longer distances may incur an additional travel charge</li>
+      <li>Stairs, access difficulties, or extra-heavy items may affect the final price</li>
+      <li>Every quote is tailored to your specific needs &mdash; contact us for an accurate estimate</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Want an exact price?</h2>
+  <p>Get in touch for a free, no-obligation quote tailored to your move.</p>
+  <a href="index.html#contact" class="btn">Get a Free Quote</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2026 Paisley Removals & Uplift Ltd. All rights reserved.</p>
+  <p><a href="tel:07449218821">07449 218821</a> &middot; <a href="mailto:paisleyremovalsandupliftltd@gmail.com">Email Us</a></p>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="tel:07449218821" class="float-btn call-btn" aria-label="Call us">&#128222;</a>
+<a href="https://wa.me/447449218821" class="float-btn whatsapp-btn" aria-label="WhatsApp">
+  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" width="24" height="24" alt="WhatsApp">
+</a>
+
+<script>
+function toggleMenu() {
+  var nav = document.getElementById("nav");
+  var overlay = document.getElementById("overlay");
+
+  if (nav.style.left === "0%") {
+    nav.style.left = "-100%";
+    overlay.style.display = "none";
+  } else {
+    nav.style.left = "0%";
+    overlay.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
