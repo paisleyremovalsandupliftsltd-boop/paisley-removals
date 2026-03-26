@@ -544,7 +544,13 @@ h1, h2, h3 {
 <div class="card">
 
   <form class="quote-form" name="quote" method="POST" data-netlify="true">
+<form class="quote-form" name="quote" method="POST" data-netlify="true" action="/thank-you.html">
 
+  <input type="hidden" name="form-name" value="quote">
+
+  <input name="name" placeholder="Full Name" required>
+  <input name="email" type="email" placeholder="Email" required>
+  <input name="phone" type="tel" placeholder="Phone">
     <input type="hidden" name="form-name" value="quote">
 <input type="hidden" name="redirect" value="/thank-you.html">
     
